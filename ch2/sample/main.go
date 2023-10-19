@@ -15,5 +15,5 @@ func init() {
 }
 
 func main() {
-	search.Run("whistleblower")
+	search.Run("whistleblower ")
 }
