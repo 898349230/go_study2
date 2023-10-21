@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-// 一个通知类行为的接口
+// 一个通知类行为的接口, 接口名称通常以er结尾
 type notifier interface {
 	notify()
 }

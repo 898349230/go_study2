@@ -7,6 +7,9 @@ import (
 func main() {
 	// 声明映射
 	dick := make(map[string]int)
+	// 预留 8 个空间
+	dick2 := make(map[string]int, 8)
+	dick2["1"] = 1
 	colors := map[string]string{"red": "#da1337", "Orange": "#e95a22"}
 	dick3 := map[string][]int{}
 	fmt.Println(dick, colors, dick3)
@@ -21,6 +24,13 @@ func main() {
 	if exist {
 		fmt.Printf("val : %s", val)
 	}
+
+	if val, ok := colors["red"]; ok {
+		fmt.Printf("valred : %s", val)
+	} else {
+
+	}
+
 	// 迭代
 	for key, val := range colors {
 		fmt.Printf("key : %s , value : %s", key, val)

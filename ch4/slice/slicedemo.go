@@ -6,7 +6,7 @@ func main() {
 
 	// 创建切片 长度和容量都是5的切片
 	slice := make([]string, 5)
-	// 长度是3容量是5的切片， 底层数组的长度是指定的容量
+	// 长度是3容量是5的切片， 底层数组的长度是指定的容量, make 预分配
 	slice2 := make([]string, 3, 5)
 	// 字面量声明切片 长度和容量都是4
 	slice3 := []int{1, 2, 3, 4}
@@ -21,7 +21,7 @@ func main() {
 	fmt.Println("slice : ", slice, " slice2 : ", slice2, " slice3 : ", slice3,
 		" slice4 : ", slice4, " slice5 : ", slice5, " slice6 : ", slice6)
 
-	// slice7 和 slice8 底层用的同一个数组
+	// slice7 和 slice8 底层用的同一个数组, slice 切分的索引是字节，不是字符
 	slice7 := []int{1, 2, 3, 4, 5}
 	// slice8 长度是 2（3-1），容量是4（len(slice7)-1）
 	slice8 := slice7[1:3]
@@ -37,6 +37,7 @@ func main() {
 	source := []string{"Apple", "Orange", "Plum", "Banana", "Grape"}
 	// 长度为1（3-2），容量为2（4-2）的切片，这样限制容量可以在使用append时创建新的数组，避免对原切片的值修改
 	slice9 := source[2:3:4]
+	fmt.Println("slice9 cap = ", cap(slice9))
 	fmt.Println(slice9[0])
 
 	s1 := []int{1, 2}
